@@ -51,19 +51,50 @@ create table match(
     score2 double precision
 );
 
+create table typepasse(
+    idtype bigint primary key,
+    nomtype text
+);
+
+insert into typepasse values (1,'point1');
+insert into typepasse values (2,'point2');
+insert into typepasse values (3,'point3');
+insert into typepasse values (4,'passedecisif');
+insert into typepasse values (5,'rd');
+insert into typepasse values (6,'ro');
+insert into typepasse values (7,'block');
+insert into typepasse values (8,'mpm');
+insert into typepasse values (9,'tnmpoint1');
+insert into typepasse values (10,'tnmpoint2');
+insert into typepasse values (11,'tnmpoint3');
+
+
+drop table statistiqueparmatch;
+
+
 create table statistiqueparmatch(
     idstatistiqueparmatch bigint primary key,
     idjoueur bigint REFERENCES joueur(idjoueur),
-    idmatch bigint REFERENCES match(idmatch),
-    point1 double precision,
-    point2 double precision,
-    point3 double precision,
-    passedecisif double precision,
-    rd double precision,
-    ro double precision,
-    block double precision,
-    mpm time,
-    tnmpoint1 double precision, 
-    tnmpoint2 double precision,
-    tnmpoint3 double precision
+    idmatch  bigint REFERENCES match(idmatch),
+    idaction bigint REFERENCES typepasse(idtype),
+    date timestamp
 );
+
+
+-- create table statistiqueparmatch(
+--     idstatistiqueparmatch bigint primary key,
+--     idjoueur bigint REFERENCES joueur(idjoueur),
+--     idmatch bigint REFERENCES match(idmatch),
+--     point1 double precision,
+--     point2 double precision,
+--     point3 double precision,
+--     passedecisif double precision,
+--     rd double precision,
+--     ro double precision,
+--     block double precision,
+--     mpm time,
+--     tnmpoint1 double precision, 
+--     tnmpoint2 double precision,
+--     tnmpoint3 double precision,
+
+-- );
