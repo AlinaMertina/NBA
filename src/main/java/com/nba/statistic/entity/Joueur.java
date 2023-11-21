@@ -24,4 +24,5 @@ public class Joueur {
     )
     Long idjoueur;
     String nomjoueur;
+    Long idposte;
 }

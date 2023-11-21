@@ -12,27 +12,27 @@ insert into poste values (4,'Ailier fort (Power forward - PF)');
 insert into poste values (5,'Pivot (Center - C)');
 
 
-insert into jouer value (1,'LeBron James',3);
-insert into jouer value (2,'Anthony Davis',5);
-insert into jouer value (3,'Russell Westbrook',1);
-insert into jouer value (4,'Carmelo Anthony',4);
-insert into jouer value (5,'Dwight Howard',5);
-insert into jouer value (6,'Malik Monk',2);
-insert into jouer value (7,'Kent Bazemore',2);
-insert into jouer value (8,'Talen Horton-Tucker',4);
-insert into jouer value (9,'Wayne Ellington',2);
-insert into jouer value (10,'DeAndre Jordan',5);
+insert into joueur values (1,'LeBron James',3);
+insert into joueur values (2,'Anthony Davis',5);
+insert into joueur values (3,'Russell Westbrook',1);
+insert into joueur values (4,'Carmelo Anthony',4);
+insert into joueur values (5,'Dwight Howard',5);
+insert into joueur values (6,'Malik Monk',2);
+insert into joueur values (7,'Kent Bazemore',2);
+insert into joueur values (8,'Talen Horton-Tucker',4);
+insert into joueur values (9,'Wayne Ellington',2);
+insert into joueur values (10,'DeAndre Jordan',5);
 
-insert into jouer value (11,'Kevin Durant',3);
-insert into jouer value (12,'James Harden',2);
-insert into jouer value (13,'Kyrie Irving',1);
-insert into jouer value (14,'Joe Harris',3);
-insert into jouer value (15,'Patty Mills',1);
-insert into jouer value (16,'Blake Griffin',4);
-insert into jouer value (17,'Bruce Brown',3);
-insert into jouer value (18,'LaMarcus Aldridge',4);
-insert into jouer value (19,'DeAndre Bembry',3);
-insert into jouer value (20,'Nicolas Claxton',5);
+insert into joueur values (11,'Kevin Durant',3);
+insert into joueur values (12,'James Harden',2);
+insert into joueur values (13,'Kyrie Irving',1);
+insert into joueur values (14,'Joe Harris',3);
+insert into joueur values (15,'Patty Mills',1);
+insert into joueur values (16,'Blake Griffin',4);
+insert into joueur values (17,'Bruce Brown',3);
+insert into joueur values (18,'LaMarcus Aldridge',4);
+insert into joueur values (19,'DeAndre Bembry',3);
+insert into joueur values (20,'Nicolas Claxton',5);
 
 insert into detailequipe values (1,1,1);
 insert into detailequipe values (2,1,2);
@@ -54,3 +54,9 @@ insert into detailequipe values (17,2,17);
 insert into detailequipe values (18,2,18);
 insert into detailequipe values (19,2,19);
 insert into detailequipe values (20,2,20);
+
+-- delete from detailequipe;
+-- delete from joueur;
+-- delete from equipe;
+-- delete from poste;
+-- delete from ville;

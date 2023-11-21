@@ -20,7 +20,7 @@ create table poste(
 
 create table joueur(
     idjoueur bigint primary key,
-    nomjoueur text
+    nomjoueur text,
     idposte bigint,
     FOREIGN KEY (idposte)  REFERENCES poste(idposte)
 );
@@ -28,8 +28,10 @@ create table joueur(
 
 create table detailequipe(
     iddetailequipe bigint primary key,
-    idequipe bigint REFERENCES equipe(id),
-    idjoueur bigint REFERENCES joueur(id),
+    idequipe bigint ,
+    idjoueur bigint,
+    FOREIGN KEY (idequipe)  REFERENCES equipe(idequipe),
+    FOREIGN KEY (idjoueur)  REFERENCES joueur(idjoueur)
 );
 
 
@@ -40,9 +42,9 @@ create table saison(
 
 create table match(
     idmatch bigint primary key,
-    idsaison bigint REFERENCES saison(id),
-    equipe1 bigint REFERENCES equipe(id),
-    equipe2 bigint REFERENCES equipe(id),
+    idsaison bigint REFERENCES saison(idsaison),
+    equipe1 bigint REFERENCES equipe(idequipe),
+    equipe2 bigint REFERENCES equipe(idequipe),
     datedebut timestamp,
     datefin timestamp,
     score1 double precision,
@@ -51,8 +53,8 @@ create table match(
 
 create table statistiqueparmatch(
     idstatistiqueparmatch bigint primary key,
-    idjoueur bigint REFERENCES joueur(id),
-    idmatch bigint REFERENCES match(id),
+    idjoueur bigint REFERENCES joueur(idjoueur),
+    idmatch bigint REFERENCES match(idmatch),
     point1 double precision,
     point2 double precision,
     point3 double precision,

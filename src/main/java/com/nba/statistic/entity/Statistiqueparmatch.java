@@ -26,7 +26,6 @@ public class Statistiqueparmatch {
             generator = "statistiqueparmatch_sequence"
     )
     Long idstatistiqueparmatch;
-    Long iddetailequipe;
     Long idjoueur;
     Long idmatch;
     Double point1;
