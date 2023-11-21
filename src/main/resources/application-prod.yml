@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: postgresql://postgres:dCF43g5CAfgE4F5FcBfb1C35d6-cggef@monorail.proxy.rlwy.net:49309/railway
+    username: postgres
+    password: dCF43g5CAfgE4F5FcBfb1C35d6-cggef
+  name: railway
+  sql:
+    init:
+      mode: always # vous ne ferez pas cela en prod, je le fais juste à des fins de démo
