@@ -28,7 +28,7 @@ public class StatisticRest {
     private final EntrersortieRepos entrersortieRepos;
 
     @GetMapping("/statistic/donner")
-    public ResponseWork proformat(@RequestParam("iddemandesociete")  Long idsaison){
+    public ResponseWork proformat(@RequestParam("idsaison")  Long idsaison){
         ResponseWork reponse = new ResponseWork();
         try {
             reponse= new ResponseWork(null,new OverViewStatistique().getstatistique(idsaison,detailequipeRepos,equipeRepos,joueurRepos,typepasseRepos,statistiqueparmatchRepos,entrersortieRepos));
