@@ -1,18 +1,11 @@
 # Utilisation de l'image adoptopenjdk pour Java 17
-FROM adoptopenjdk/openjdk17:alpine
+FROM maven:3.8.5-openjdk-17 as build
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Répertoire de travail dans le conteneur
-WORKDIR /app
+FROM openjdk:17.0.1-jdk=slim
+ARG PORT
+ENV PORT=${PORT}
+COPY --from=build /target/tatistic-0.0.1-SNAPSHOT.jar statnbabck.jar
+ENTRYPOINT ["java", "-Dserver,port=${PORT}", "-jar","statnbabck.jar"]
 
-# Installation de Maven
-RUN apk add --no-cache maven
-
-# Copie des fichiers nécessaires
-COPY pom.xml /app/pom.xml
-COPY src /app/src
-
-# Construction du projet avec Maven
-RUN mvn clean package
-
-# Commande par défaut pour démarrer l'application Spring
-CMD ["java", "-jar", "target/statistic-0.0.1-SNAPSHOT.jar"]
