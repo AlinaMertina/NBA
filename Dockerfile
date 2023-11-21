@@ -12,13 +12,13 @@
 #
 # Build stage
 #
-FROM maven:3.6.0-jdk-11-slim AS build
-WORKDIR /app
-COPY /app/target/statistic-0.0.1-SNAPSHOT.jar /app/statistic-0.0.1-SNAPSHOT.jar
+# FROM maven:3.6.0-jdk-11-slim AS build
+# WORKDIR /app
+# COPY /app/target/statistic-0.0.1-SNAPSHOT.jar /app/statistic-0.0.1-SNAPSHOT.jar
 
-EXPOSE 8080
+# EXPOSE 8080
 
-CMD ["java", "-jar", "/app/statistic-0.0.1-SNAPSHOT.jar"]
+# CMD ["java", "-jar", "/app/statistic-0.0.1-SNAPSHOT.jar"]
 
 # # Package stage
 # #
@@ -66,4 +66,14 @@ CMD ["java", "-jar", "/app/statistic-0.0.1-SNAPSHOT.jar"]
 
 # # RUN mvn clean package -DskipTests
 
-# # CMD ["java", "-jar", "/target/tatistic-0.0.1-SNAPSHOT.jar"]
+# # CMD ["java", "-jar", "/target/statistic-0.0.1-SNAPSHOT.jar"]
+
+FROM openjdk:17-jre-slim
+
+WORKDIR /app
+
+COPY /app/target/statistic-0.0.1-SNAPSHOT.jar /app/statistic-0.0.1-SNAPSHOT.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "/app/statistic-0.0.1-SNAPSHOT.jar"]
