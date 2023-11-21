@@ -56,6 +56,15 @@ create table typepasse(
     nomtype text
 );
 
+create table entrersortie(
+    identrersortie bigint primary key,
+    idmatch bigint,
+    idjoueur bigint REFERENCES equipe(idequipe),
+    entrer timestamp,
+    sortie timestamp
+);
+
+
 insert into typepasse values (1,'point1');
 insert into typepasse values (2,'point2');
 insert into typepasse values (3,'point3');
@@ -67,6 +76,10 @@ insert into typepasse values (8,'mpm');
 insert into typepasse values (9,'tnmpoint1');
 insert into typepasse values (10,'tnmpoint2');
 insert into typepasse values (11,'tnmpoint3');
+insert into typepasse values (12,'passe');
+insert into typepasse values (13,'lancer front');
+
+
 
 create table statistiqueparmatch(
     idstatistiqueparmatch bigint primary key,
