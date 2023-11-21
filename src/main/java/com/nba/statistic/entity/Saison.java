@@ -11,17 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Joueur {
+public class Saison {
     @Id
     @SequenceGenerator(
-            name = "joueur_sequence",
-            sequenceName = "joueur_sequence",
+            name = "saison_sequence",
+            sequenceName = "saison_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "joueur_sequence"
+            generator = "saison_sequence"
     )
-    Long idjoueur;
-    String nomjoueur;
+    Long idsaison;
+    String nom;
 }
