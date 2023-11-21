@@ -1,6 +1,6 @@
 package com.nba.statistic.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +15,18 @@ import java.sql.Time;
 @AllArgsConstructor
 @Entity
 public class Statistiqueparmatch {
+    @Id
+    @SequenceGenerator(
+            name = "statistiqueparmatch_sequence",
+            sequenceName = "statistiqueparmatch_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "statistiqueparmatch_sequence"
+    )
+    Long idstatistiqueparmatch;
+    Long iddetailequipe;
     Long idjoueur;
     Long idmatch;
     Double point1;
