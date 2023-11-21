@@ -89,7 +89,13 @@ create table statistiqueparmatch(
     date timestamp
 );
 
+select sum(idaction) from statistiqueparmatch join match on statistiqueparmatch.idmatch=match.idmatch where idjoueur=1 and idaction=1 and match.idsaison=1
 
+select sum(idmatch) from statistiqueparmatch join match on statistiqueparmatch.idmatch=match.idmatch where idjoueur=1  and match.idsaison=1
+
+select sum(idmatch) from statistiqueparmatch join match on statistiqueparmatch.idmatch=match.idmatch where match.idsaison=1;
+
+select sum((sortie - entrer) / 60) from entrersortie join match on entrersortie.idmatch=match.idmatch where idjoueur=1  and match.idsaison=1
 -- create table statistiqueparmatch(
 --     idstatistiqueparmatch bigint primary key,
 --     idjoueur bigint REFERENCES joueur(idjoueur),

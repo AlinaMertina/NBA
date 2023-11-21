@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Data
@@ -28,8 +29,8 @@ public class Match {
     Long idsaison;
     Long equipe1;
     Long equipe2;
-    Timestamp datedebut;
-    Timestamp datefin;
+    Date datedebut;
+    Date datefin;
     Double score1;
     Double score2;
 }

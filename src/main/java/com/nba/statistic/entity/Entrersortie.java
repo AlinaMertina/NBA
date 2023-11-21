@@ -1,6 +1,8 @@
 package com.nba.statistic.entity;
 
 import java.security.Timestamp;
+import java.sql.Date;
+
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +30,7 @@ public class Entrersortie {
     Long identrersortie;
     Long idmatch;
     Long idjoueur;
-    Timestamp entrer;
-    Timestamp sortie;
+    Date entrer;
+    Date sortie;
 
 }

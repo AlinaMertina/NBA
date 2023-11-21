@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
 
+import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
@@ -30,5 +31,5 @@ public class Statistiqueparmatch {
     Long idjoueur;
     Long idmatch;
     Long idaction;
-    Timestamp date;
+    Date date;
 }
