@@ -68,10 +68,6 @@ insert into typepasse values (9,'tnmpoint1');
 insert into typepasse values (10,'tnmpoint2');
 insert into typepasse values (11,'tnmpoint3');
 
-
-drop table statistiqueparmatch;
-
-
 create table statistiqueparmatch(
     idstatistiqueparmatch bigint primary key,
     idjoueur bigint REFERENCES joueur(idjoueur),

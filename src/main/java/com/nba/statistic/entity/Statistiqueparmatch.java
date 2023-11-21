@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 
 @Data
 @Builder
@@ -28,15 +29,6 @@ public class Statistiqueparmatch {
     Long idstatistiqueparmatch;
     Long idjoueur;
     Long idmatch;
-    Double point1;
-    Double point2;
-    Double point3;
-    Double passedecisif;
-    Double rd;
-    Double ro;
-    Double block;
-    Time mpm;
-    Double tnmpoint1;
-    Double tnmpoint2;
-    Double tnmpoint3;
+    Long idaction;
+    Timestamp date;
 }
