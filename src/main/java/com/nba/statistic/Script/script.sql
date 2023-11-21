@@ -12,20 +12,26 @@ create table equipe(
     FOREIGN KEY (idville)  REFERENCES ville(idville)
 );
 
-create table joueur(
-    idjoueur bigint primary key,
-    nomjoueur text
-);
-
 create table poste(
     idposte bigint primary key,
     nomposte varchar(100)
 );
 
+
+create table joueur(
+    idjoueur bigint primary key,
+    nomjoueur text
+    idposte bigint,
+    FOREIGN KEY (idposte)  REFERENCES poste(idposte)
+);
+
+
 create table detailequipe(
+    iddetailequipe bigint primary key,
     idequipe bigint REFERENCES equipe(id),
     idjoueur bigint REFERENCES joueur(id),
 );
+
 
 create table saison(
     idsaison bigint primary key,
@@ -44,6 +50,7 @@ create table match(
 );
 
 create table statistiqueparmatch(
+    idstatistiqueparmatch bigint primary key,
     idjoueur bigint REFERENCES joueur(id),
     idmatch bigint REFERENCES match(id),
     point1 double precision,
