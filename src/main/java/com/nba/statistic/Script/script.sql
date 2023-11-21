@@ -58,8 +58,8 @@ create table typepasse(
 
 create table entrersortie(
     identrersortie bigint primary key,
-    idmatch bigint,
-    idjoueur bigint REFERENCES equipe(idequipe),
+    idmatch bigint REFERENCES match(idmatch),
+    idjoueur bigint REFERENCES joueur(idjoueur),
     entrer timestamp,
     sortie timestamp
 );
